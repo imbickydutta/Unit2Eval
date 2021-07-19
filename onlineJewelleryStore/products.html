@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px;
+        border: 5px solid black;
+      }
+      .navbar > .menu > a {
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: bold;
+        margin: 20px;
+        color: black;
+      }
+
+      .navbar .logo {
+        width: 100px;
+      }
+      .navbar img {
+        width: 100%;
+      }
+      #catalogue {
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(4, 23%);
+        gap: 1.2%;
+        margin: auto;
+      }
+      #catalogue > div {
+        border: 5px solid black;
+
+        text-align: center;
+        padding: 20px;
+      }
+
+      #catalogue > div:hover {
+        border: 5px solid black;
+        text-align: center;
+        padding: 20px;
+        background: gray;
+      }
+      #catalogue > div > div {
+        width: 80%;
+        margin: auto;
+      }
+      #catalogue img {
+        width: 100%;
+        height: 200px;
+        /* border: 5px solid black; */
+        /* margin: auto; */
+      }
+
+      .center {
+        text-align: center;
+        margin: 20px;
+      }
+      button {
+        margin: 10px 9px;
+        background-color: rgb(19, 28, 54);
+        color: white;
+        padding: 4px 14px;
+        border: none;
+        border-radius: 5px;
+        font-size: 25px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgb(76, 113, 214);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <div class="logo">
+          <img
+            src="https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/09/jewelry-logo-design.jpg"
+            alt=""
+          />
+        </div>
+        <div class="menu">
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart</a>
+        </div>
+      </div>
+
+      <div class="center">
+        <div>
+          <button onclick="HtoL()">Price: High to Low</button>
+          <button onclick="LtoH()">Price: Low to High</button>
+        </div>
+        <div>
+          <select name="type" id="type">
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="platinum">Platinum</option>
+            <option value="diamond">Diamond</option>
+          </select>
+
+          <button onclick="byType()">Filter</button>
+        </div>
+      </div>
+
+      <div id="catalogue"></div>
+    </div>
+  </body>
+</html>
+<script src="products.js"></script>
